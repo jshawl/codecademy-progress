@@ -1,1 +1,7 @@
-<%= @url.inspect %>
+User has completed:
+
+<ul>
+  <%  @badges.each do |b| %>
+    <li><%= b %></li>
+  <% end %>
+</ul>

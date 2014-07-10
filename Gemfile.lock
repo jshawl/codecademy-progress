@@ -8,6 +8,9 @@ GEM
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
+    mini_portile (0.6.0)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -27,5 +30,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  nokogiri
   rerun
   sinatra

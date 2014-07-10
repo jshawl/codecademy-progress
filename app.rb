@@ -1,4 +1,7 @@
 require 'sinatra'
+require 'nokogiri'
+require 'open-uri'
+
 
 get '/' do
   erb :index
@@ -16,5 +19,13 @@ end
 
 def get_badges user
   url = 'http://www.codecademy.com/users/'+ user +'/achievements'
-  url
+  doc = Nokogiri::HTML(open( url ))
+  p doc
+  @badges = []
+  doc.css('.achievement-card').each do |l|
+    p "*********"
+    name = l.css('h5').text
+    @badges << name
+  end
+  @badges
 end
